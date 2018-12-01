@@ -1,0 +1,40 @@
+% pseudocode.sty defines additional languages with listings package for writing
+% algorithms in a natural way (in english or in french)
+% author: Guillaume J. Laurent 
+% version: 1/11/2018
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{pseudocode}
+
+\usepackage{listings}
+
+\lstdefinelanguage{pseudocode}
+{
+sensitive=false,
+keywords={while,do,endwhile,if,then,else,endif,repeat,until,for,endfor,from,to,each,step,%
+function,procedure,begin,end,return,input,output,data,result,%
+type,record,object,class,array,%
+integer,boolean,true,false,real,string}, 
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+string=[b]{"},
+mathescape=true,
+literate={:=}{{$\gets$ }}1 {<-}{{$\gets$ }}1 {<=}{{$\leq$ }}1 {>=}{{$\geq$ }}1 %
+{<>}{{$\neq$ }}1 {!=}{{$\neq$ }}1
+}
+
+\lstdefinelanguage{pseudocodefr}
+{
+sensitive=false,
+keywords={tant,que,fintantque,si,alors,sinon,finsi,fin,pour,finpour,de,faire,%
+fonction,retourner,type,enregistrement,objet,classe,%
+tableau,entier,entiers,vrai,faux,allant,chaque,par,pas,la},
+otherkeywords={début,Début,procédure,Procédure,répéter,Répéter,réel,réels,
+Réel,Réels,chaîne,chaînes,Chaîne,Chaînes,Booléen,booléen,Booléens,booléens,à,donnée,Donnée,données,Données,résultat,Résultat,résultats,Résultat}, 
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+string=[b]{"},
+mathescape=true
+literate={:=}{{$\gets$ }}1 {<-}{{$\gets$ }}1 {<=}{{$\leq$ }}1 {>=}{{$\geq$ }}1 %
+{<>}{{$\neq$ }}1 {!=}{{$\neq$ }}1
+}
+

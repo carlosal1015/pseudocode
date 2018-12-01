@@ -1,0 +1,105 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage{pseudocode}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+
+\lstnewenvironment{pseudo}
+{\lstset{language=pseudocode,
+         tabsize=4,
+         columns=flexible,
+         basicstyle=\sffamily\small,
+         xleftmargin=1cm,
+         xrightmargin=1cm,
+         keywordstyle=\color[rgb]{0,0,1},
+         commentstyle=\color[rgb]{0.133,0.545,0.133}\emph,
+         stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+}{}
+
+\lstnewenvironment{pseudofr}
+{\lstset{language=pseudocodefr,
+         tabsize=4,
+         columns=flexible,
+         basicstyle=\sffamily\small,
+         xleftmargin=1cm,
+         xrightmargin=1cm,
+         keywordstyle=\color[rgb]{0,0,1},
+         commentstyle=\color[rgb]{0.133,0.545,0.133}\emph,
+         stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+}{}
+
+\lstnewenvironment{tex}
+{\lstset{language=tex,
+         tabsize=4,
+         basicstyle=\ttfamily\small,
+         xleftmargin=1cm,
+         xrightmargin=1cm,
+}
+}{}
+
+
+ \date{1/11/2018}
+ \title{pseudocode.sty}
+ \author{Guillaume J. Laurent}
+
+\begin{document}
+\maketitle
+
+\texttt{pseudocode.sty} defines a language with listings package for writing algorithms in a natural way (in english or in french).
+
+\bigskip
+The following \LaTeX{} code:
+\begin{tex}
+\begin{pseudo}
+Function integer greatestCommonDivisor(integer a, integer b)
+begin
+    while (a <> b) do 
+        if a > b
+           a := a - b
+        else
+           b <- b - a
+        endif
+    endwhile
+    return a
+end
+\end{pseudo}
+\end{tex}
+
+produces:
+
+\begin{pseudo}
+Function integer greatestCommonDivisor(integer a, integer b)
+begin
+    while (a <> b) do 
+        if a > b
+           a := a - b
+        else
+           b <- b - a
+        endif
+    endwhile
+    return a
+end
+\end{pseudo}
+
+Same example but written french:
+\begin{pseudofr}
+Fonction entier plusGrandCommunDiviseur(entier a, entier b )
+Début
+    tant que  ( a != b ) faire
+        si ( a > b )
+            a := a - b 
+        sinon
+            b <- b - a 
+        finsi
+    fintantque
+    retourner a
+Fin
+\end{pseudofr}
+
+
+
+
+\end{document}
